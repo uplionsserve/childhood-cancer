@@ -2,9 +2,9 @@
 import { fade, fly } from "svelte/transition"
 import Icon from "../Icon.svelte"
 import Headline from "../_fragments/Headline.svelte"
-import type { Hero } from "@appTypes/childhood-cancer"
+// import type { Hero } from "@appTypes/childhood-cancer"
 
-export let heroes: Array<Hero> = []
+export let heroes: Array<any> = []
 
 let position = 0
 let clicked: "previous" | "next" | null = null
