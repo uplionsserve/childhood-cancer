@@ -13,15 +13,16 @@ export default defineConfig({
             },
         }),
     ],
-    trailingSlash: "always",
+    // trailingSlash: "always",
     site: "https://uplionsserve.org",
     base: "/childhood-cancer",
     output: "server",
     adapter: node({
         mode: "middleware",
     }),
-    build: {
-        server: "../../web-server/src/childhood-cancer/server",
-        client: "../../web-server/src/childhood-cancer/client",
+    vite: {
+        ssr: {
+            noExternal: ["cookie", "string-width"],
+        },
     },
 })

@@ -27,7 +27,7 @@ const handleClick_next = () => {
     {#key currentHero.image}
         <img
             transition:fade={{ duration: 400 }}
-            src={currentHero.image.src}
+            src="http://localhost:3000{currentHero.image.src}"
             alt={currentHero.image.alt}
             class="absolute left-1/2 z-0 w-full max-w-md -translate-x-1/2 -translate-y-96 rounded-3xl lg:left-auto lg:right-0 lg:-translate-y-12 lg:translate-x-0 xl:w-auto"
         />

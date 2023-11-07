@@ -12,7 +12,7 @@ import Group from "@components/ContentPage/Group.svelte";
 import PartnerSpotlight from "@components/partners/PartnerSpotlight.svelte";
 import Headline from "@components/_fragments/Headline.svelte";
 
-const res = await fetch("http://localhost:3001/api/globals/home?depth=1")
+const res = await fetch("http://localhost:3000/api/globals/home?depth=1")
 const payload = await res.json()
 
 const { hero_banner } = payload
