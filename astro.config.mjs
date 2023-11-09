@@ -16,13 +16,6 @@ export default defineConfig({
     // trailingSlash: "always",
     site: "https://uplionsserve.org",
     base: "/childhood-cancer",
-    output: "server",
-    adapter: node({
-        mode: "middleware",
-    }),
-    vite: {
-        ssr: {
-            noExternal: ["cookie", "string-width"],
-        },
-    },
+    output: "static",
+    outDir: "../../.vercel/output/static/childhood-cancer"
 })
