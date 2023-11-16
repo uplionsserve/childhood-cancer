@@ -17,4 +17,5 @@ export default defineConfig({
     site: "https://uplionsserve.org",
     base: "/childhood-cancer",
     output: "static",
+    outDir: "./dist/childhood-cancer",
 })
