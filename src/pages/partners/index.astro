@@ -21,16 +21,18 @@ type partner = {
     link: string
 }
 
+const { BASE_URL } = import.meta.env
+
 const partners: partner[] = [
     {
         organization: "Camp Quality USA",
         description: "Camp Quality is a nonprofit organization that has been serving children with cancer and their families for over 30 years by providing year-round programs, experiences, and companionship, at no cost to the family.",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/camp-quality-usa.png`,
+            src: `${BASE_URL}/graphics/logos/camp-quality-usa.png`,
             alt: "Camp Quality USA logo",
         },
         coverPhoto: {
-            src: `${import.meta.env.BASE_URL}/images/covers/camp-quality-usa.jpg`,
+            src: `${BASE_URL}/images/covers/camp-quality-usa.jpg`,
             alt: "" // TODO: this alt
         },
         link: "https://www.campqualityusa.org/mi/",
@@ -38,7 +40,7 @@ const partners: partner[] = [
     {
         organization: "Kids Kicking Cancer",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/kids-kicking-cancer.png`,
+            src: `${BASE_URL}/graphics/logos/kids-kicking-cancer.png`,
             alt: "Kids Kicking Cancer logo",
         },
         link: "https://kidskickingcancer.org/",
@@ -46,7 +48,7 @@ const partners: partner[] = [
     {
         organization: "Maggie's Wigs for Kids",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/maggies-wigs-4-kids.png`,
+            src: `${BASE_URL}/graphics/logos/maggies-wigs-4-kids.png`,
             alt: "Maggie's Wigs for Kids logo",
             span: 2
         },
@@ -56,12 +58,12 @@ const partners: partner[] = [
         organization: "Northwoods AirLifeLine",
         description: "Northwoods AirLifeline is a non-profit organization of volunteer pilots who donate their time and aircraft to help patients and their families with urgent medical needs for services not found locally.",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/northwoods-airlifeline.png`,
+            src: `${BASE_URL}/graphics/logos/northwoods-airlifeline.png`,
             alt: "Northwoods AirLifeLine logo",
             span: 2
         },
         coverPhoto: {
-            src: `${import.meta.env.BASE_URL}/images/covers/northwoods-airlifeline.jpg`,
+            src: `${BASE_URL}/images/covers/northwoods-airlifeline.jpg`,
             alt: "Northwoods AirLifeLine plane and operators",
         },
         link: "https://www.northwoodsairlifeline.org",
@@ -69,7 +71,7 @@ const partners: partner[] = [
     {
         organization: "Bay Cliff Health Camp",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/bay-cliff-health-camp.png`,
+            src: `${BASE_URL}/graphics/logos/bay-cliff-health-camp.png`,
             alt: "Bay Cliff Camp logo",
         },
         link: "https://baycliff.org",
@@ -77,7 +79,7 @@ const partners: partner[] = [
     {
         organization: "Families of Children with Cancer",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/families-of-children-with-cancer.jpg`,
+            src: `${BASE_URL}/graphics/logos/families-of-children-with-cancer.jpg`,
             alt: "Families of Children with Cancer logo",
         },
         link: "https://www.focwc.org/",
@@ -85,7 +87,7 @@ const partners: partner[] = [
     {
         organization: "Upper Peninsula Health Plan",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/upper-peninsula-health-plan.png`,
+            src: `${BASE_URL}/graphics/logos/upper-peninsula-health-plan.png`,
             alt: "Upper Peninsula Health Plan logo",
             span: 2
         },
@@ -94,7 +96,7 @@ const partners: partner[] = [
     {
         organization: "Upper Peninsula Health System",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/upper-peninsula-health-system.png`,
+            src: `${BASE_URL}/graphics/logos/upper-peninsula-health-system.png`,
             alt: "Upper Peninsula Health System logo",
         },
         link: "https://www.mgh.org/",
@@ -102,7 +104,7 @@ const partners: partner[] = [
     {
         organization: "Northern Michigan University Rural Health",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/nmu-rural-health.png`,
+            src: `${BASE_URL}/graphics/logos/nmu-rural-health.png`,
             alt: "Northern Michigan University Rural Health logo",
         },
         link: "https://nmu.edu/ruralhealth/",
@@ -110,7 +112,7 @@ const partners: partner[] = [
     {
         organization: "Lake State Superior University",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/lake-superior-state-university.png`,
+            src: `${BASE_URL}/graphics/logos/lake-superior-state-university.png`,
             alt: "Lake State Superior University logo",
             span: 2
         },
@@ -119,7 +121,7 @@ const partners: partner[] = [
     {
         organization: "UPCAP",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/upcap.png`,
+            src: `${BASE_URL}/graphics/logos/upcap.png`,
             alt: "Upper Peninsula Commission for Area Progress (UPCAP) logo",
             span: 2
         },
@@ -129,20 +131,20 @@ const partners: partner[] = [
         organization: "Superior Health Foundation",
         description: "The Superior Health Foundation is a health-centered, grant-giving organization that provides funding to address equipment, health education and program needs for the residents of the Upper Peninsula.",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/superior-health-foundation.png`,
+            src: `${BASE_URL}/graphics/logos/superior-health-foundation.png`,
             alt: "Superior Health Foundation logo",
             span: 2
         },
         coverPhoto: {
-            src: `${import.meta.env.BASE_URL}/images/covers/superior-health-foundation.jpg`,
+            src: `${BASE_URL}/images/covers/superior-health-foundation.jpg`,
             alt: "Ballroom holding the SHF 2022 Gala",
         },
-        link: `${import.meta.env.BASE_URL}/partners/superior-health-foundation`,
+        link: `${BASE_URL}/partners/superior-health-foundation`,
     },
     {
         organization: "Defense Against Diabetes",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/defense-against-diabetes.svg`,
+            src: `${BASE_URL}/graphics/logos/defense-against-diabetes.svg`,
             alt: "Defense Against Diabetes logo",
         },
         link: "https://uplionsserve.org/dad/",
@@ -151,19 +153,19 @@ const partners: partner[] = [
         organization: "Tour Da Yoop, Eh",
         description: "The Tour Da Yoop, Eh benefit for Childhood Cancer is a 1,200 mile bike tour around the perimeter of the Upper Peninsula! Enjoy endless nature and lakeside views while cycling across some of the safest roads in the United States.",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/tour-da-yoop-eh.png`,
+            src: `${BASE_URL}/graphics/logos/tour-da-yoop-eh.png`,
             alt: "Tour Da Yoop, Eh logo",
         },
         coverPhoto: {
-            src: `${import.meta.env.BASE_URL}/images/covers/tour-da-yoop-eh.jpg`,
+            src: `${BASE_URL}/images/covers/tour-da-yoop-eh.jpg`,
             alt: "Tour Da Yoop, Eh cyclists on the road.",
         },
-        link: `${import.meta.env.BASE_URL}/partners/tour-da-yoop-eh`,
+        link: `${BASE_URL}/partners/tour-da-yoop-eh`,
     },
     {
         organization: "Call of the Yooper",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/call-of-the-yooper.png`,
+            src: `${BASE_URL}/graphics/logos/call-of-the-yooper.png`,
             alt: "Call of the Yooper logo",
         },
         link: "https://calloftheyooper.com/",
@@ -171,7 +173,7 @@ const partners: partner[] = [
     {
         organization: "Motts Children's Hospital",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/motts-childrens-hospital.png`,
+            src: `${BASE_URL}/graphics/logos/motts-childrens-hospital.png`,
             alt: "Motts Children's Hospital logo",
         },
         link: "https://www.mottchildren.org/",
@@ -179,7 +181,7 @@ const partners: partner[] = [
     {
         organization: "HSHS St. Vincent Children's Hospital",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/hshs-st-vincent-childrens-hospital.png`,
+            src: `${BASE_URL}/graphics/logos/hshs-st-vincent-childrens-hospital.png`,
             alt: "HSHS St. Vincent Children's Hospital logo",
             span: 2
         },
@@ -188,11 +190,29 @@ const partners: partner[] = [
     {
         organization: "Children's Wisconsin",
         logo: {
-            src: `${import.meta.env.BASE_URL}/graphics/logos/childrens-wisconsin.png`,
+            src: `${BASE_URL}/graphics/logos/childrens-wisconsin.png`,
             alt: "Children's Wisconsin logo",
             span: 2
         },
         link: "https://childrenswi.org/",
+    },
+    {
+        organization: "Meijer",
+        logo: {
+            src: `${BASE_URL}/graphics/logos/meijer.svg`,
+            alt: "Meijer logo",
+            span: 2
+        },
+        link: "https://www.meijer.com/shopping/store-locator/293.html",
+    },
+    {
+        organization: "Flagstar",
+        logo: {
+            src: `${BASE_URL}/graphics/logos/flagstar.svg`,
+            alt: "Flagstar logo",
+            span: 2
+        },
+        link: "https://www.flagstar.com/ishpeming-flagstar-bank-michigan-2735.html",
     },
 ]
 
@@ -206,7 +226,7 @@ const setSpotlightPartner = (partnerId: number) => {
 <ContentPageLayout
     title="Partners"
     description=""
-    hero={{src: `${import.meta.env.BASE_URL}/images/banners/partners.jpg`, alt: "Tour Da Yoop, Eh cyclists facing the Mackinac Bridge."}}>
+    hero={{src: `${BASE_URL}/images/banners/partners.jpg`, alt: "Tour Da Yoop, Eh cyclists facing the Mackinac Bridge."}}>
 
     <!-- <Group width="large" style="mb-16">
         <Headline>Spotlight</Headline>
