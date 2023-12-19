@@ -9,7 +9,6 @@
             "@styles/*": ["./src/styles/*"],
             "@appTypes": ["../types"],
             "@appTypes/*": ["../types/*"]
-        },
-        "types": ["bun-types"]
+        }
     }
 }
