@@ -3,8 +3,16 @@
     "tabWidth": 4,
     "svelteIndentScriptAndStyle": false,
     "plugins": [
+        "prettier-plugin-astro",
         "prettier-plugin-svelte",
-        "prettier-plugin-tailwindcss",
-        "prettier-plugin-astro"
+        "prettier-plugin-tailwindcss"
+    ],
+    "overrides": [
+        {
+            "files": "*.astro",
+            "options": {
+                "parser": "astro"
+            }
+        }
     ]
 }
