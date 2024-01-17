@@ -3,6 +3,7 @@ import ContentPageLayout from "@layouts/ContentPageLayout.astro"
 import Group from "@components/ContentPage/Group.svelte"
 import Heading from "@components/Heading.svelte"
 import CallToAction from "@components/CallToAction.svelte"
+import Headline from "@components/_fragments/Headline.svelte"
 
 const { BASE_URL } = import.meta.env
 
@@ -32,7 +33,7 @@ const newsletters = [
 ---
 
 <ContentPageLayout
-    title="Newsletter Archive"
+    title="Newsletter"
     description=""
     hero={{
         src: `${import.meta.env.BASE_URL}/images/banners/photo-gallery.jpg`,
@@ -42,6 +43,8 @@ const newsletters = [
 >
     <Group>
         <div class="w-full">
+            <Headline direction="left">Newsletter Archive</Headline>
+
             {
                 newsletters.map((newsletter) => (
                     <a
