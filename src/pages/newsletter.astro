@@ -1,0 +1,212 @@
+---
+import ContentPageLayout from "@layouts/ContentPageLayout.astro"
+import Group from "@components/ContentPage/Group.svelte"
+import Heading from "@components/Heading.svelte"
+import CallToAction from "@components/CallToAction.svelte"
+import Headline from "@components/_fragments/Headline.svelte"
+
+const { BASE_URL } = import.meta.env
+
+const newsletters = [
+    {
+        name: "Together We Can! 2023 Fall Edition",
+        year: 2023,
+        month: "November",
+        volume: 1,
+        number: 3,
+    },
+    {
+        name: "Together We Can! 2023 Summer Edition",
+        year: 2023,
+        month: "July",
+        volume: 1,
+        number: 2,
+    },
+    {
+        name: "Together We Can! 2023 Spring Edition",
+        year: 2023,
+        month: "April",
+        volume: 1,
+        number: 1,
+    },
+]
+---
+
+<ContentPageLayout
+    title="Newsletter"
+    description=""
+    hero={{
+        src: `${import.meta.env.BASE_URL}/images/banners/photo-gallery.jpg`,
+        alt: "Keith Smith and his grandson fishing during a Upper Michigan sunset",
+    }}
+    style="!pb-0"
+>
+    <Group>
+        <div class="w-full">
+            <Headline direction="left">Newsletter Archive</Headline>
+
+            {
+                newsletters.map((newsletter) => (
+                    <a
+                        href={`${BASE_URL}/content/newsletters/newsletter-v${newsletter.volume}n${newsletter.number}.pdf`}
+                        class="my-4 flex flex-col gap-2 rounded-lg bg-orange-super-light p-4 no-underline"
+                    >
+                        <Heading size={3}>{newsletter.name}</Heading>
+                        <p class="flex gap-2">
+                            <span>
+                                Vol. {newsletter.volume}, No.{" "}
+                                {newsletter.number}
+                            </span>
+                            <span>—</span>
+                            <span>
+                                {newsletter.month} {newsletter.year}
+                            </span>
+                        </p>
+                    </a>
+                ))
+            }
+        </div>
+    </Group>
+
+    <CallToAction
+        src={`${import.meta.env.BASE_URL}/images/GreatLakes-0.1q.jpg`}
+        alt="Birdseye view of a shore on the Great Lakes. By Lucas Ludwig on Unsplash"
+        noButton
+    >
+        <span slot="title">
+            Get <span class="text-orange">the latest</span> from the Childhood Cancer
+            Program.
+        </span>
+
+        <div id="mc_embed_shell">
+            <link
+                href="//cdn-images.mailchimp.com/embedcode/classic-061523.css"
+                rel="stylesheet"
+                type="text/css"
+            />
+            <div id="mc_embed_signup">
+                <form
+                    action="https://uplionsserve.us17.list-manage.com/subscribe/post?u=a3253f4d7bf67328486b5d924&id=620862a42d&f_id=00417be0f0"
+                    method="post"
+                    id="mc-embedded-subscribe-form"
+                    name="mc-embedded-subscribe-form"
+                    class="validate"
+                    target="_blank"
+                >
+                    <div id="mc_embed_signup_scroll">
+                        <div class="mc-field-group">
+                            <div class="flex items-center justify-between">
+                                <label for="mce-EMAIL">
+                                    Email Address <span class="asterisk">*</span
+                                    >
+                                </label>
+                                <div class="indicates-required">
+                                    <span class="asterisk">*</span> indicates required
+                                </div>
+                            </div>
+                            <input
+                                type="email"
+                                name="EMAIL"
+                                class="required email"
+                                id="mce-EMAIL"
+                                required=""
+                                value=""
+                            />
+                        </div>
+                        <div id="mce-responses" class="clear foot">
+                            <div
+                                class="response"
+                                id="mce-error-response"
+                                style="display: none;"
+                            >
+                            </div>
+                            <div
+                                class="response"
+                                id="mce-success-response"
+                                style="display: none;"
+                            >
+                            </div>
+                        </div>
+                        <div
+                            style="position: absolute; left: -5000px;"
+                            aria-hidden="true"
+                        >
+                            <input
+                                type="text"
+                                name="b_a3253f4d7bf67328486b5d924_620862a42d"
+                                tabindex="-1"
+                                value=""
+                            />
+                        </div>
+                        <div class="optionalParent">
+                            <div class="clear foot">
+                                <input
+                                    type="submit"
+                                    name="subscribe"
+                                    id="mc-embedded-subscribe"
+                                    class="button"
+                                    value="Subscribe"
+                                />
+                                <!-- <p style="margin: 0px auto;">
+                                    <a
+                                        href="http://eepurl.com/iHLEK-"
+                                        title="Mailchimp - email marketing made easy and fun"
+                                        ><span
+                                            style="display: inline-block; background-color: transparent; border-radius: 4px;"
+                                            ><img
+                                                class="refferal_badge"
+                                                src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                                                alt="Intuit Mailchimp"
+                                                style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"
+                                            /></span
+                                        ></a
+                                    >
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <script
+                type="text/javascript"
+                src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+            ></script>
+            <script type="text/javascript">
+                ;(function ($) {
+                    window.fnames = new Array()
+                    window.ftypes = new Array()
+                    fnames[0] = "EMAIL"
+                    ftypes[0] = "email"
+                    fnames[1] = "FNAME"
+                    ftypes[1] = "text"
+                    fnames[2] = "LNAME"
+                    ftypes[2] = "text"
+                    fnames[3] = "ADDRESS"
+                    ftypes[3] = "address"
+                    fnames[4] = "PHONE"
+                    ftypes[4] = "phone"
+                    fnames[5] = "BIRTHDAY"
+                    ftypes[5] = "birthday"
+                })(jQuery)
+                var $mcj = jQuery.noConflict(true)
+            </script>
+        </div>
+    </CallToAction>
+</ContentPageLayout>
+
+<style>
+    #mc_embed_signup {
+        border-radius: 1rem;
+        background: #ffb419;
+        clear: left;
+        font:
+            14px "URW-Din",
+            Arial;
+        font-weight: bold;
+        width: 600px;
+    }
+
+    #mc-embedded-subscribe {
+        background-color: #4b6496 !important;
+    }
+</style>
