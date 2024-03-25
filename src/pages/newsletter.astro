@@ -1,4 +1,5 @@
 ---
+import { getNewsletters } from "@/utils/cms"
 import ContentPageLayout from "@layouts/ContentPageLayout.astro"
 import Group from "@components/ContentPage/Group.svelte"
 import Heading from "@components/Heading.svelte"
@@ -6,71 +7,49 @@ import CallToAction from "@components/CallToAction.svelte"
 import Headline from "@components/_fragments/Headline.svelte"
 
 const { BASE_URL } = import.meta.env
-
-const newsletters = [
-    {
-        name: "Together We Can! 2024 Winter Edition",
-        year: 2024,
-        month: "February",
-        volume: 1,
-        number: 4,
-    },
-    {
-        name: "Together We Can! 2023 Fall Edition",
-        year: 2023,
-        month: "November",
-        volume: 1,
-        number: 3,
-    },
-    {
-        name: "Together We Can! 2023 Summer Edition",
-        year: 2023,
-        month: "July",
-        volume: 1,
-        number: 2,
-    },
-    {
-        name: "Together We Can! 2023 Spring Edition",
-        year: 2023,
-        month: "April",
-        volume: 1,
-        number: 1,
-    },
-]
+const newsletters = await getNewsletters()
 ---
 
-<ContentPageLayout
-    title="Newsletter"
-    description=""
-    hero={{
-        src: `${import.meta.env.BASE_URL}/images/banners/photo-gallery.jpg`,
-        alt: "Keith Smith and his grandson fishing during a Upper Michigan sunset",
-    }}
-    style="!pb-0"
->
+<ContentPageLayout title="Newsletter" description="" style="!pb-0">
     <Group>
         <div class="w-full">
             <Headline direction="left">Newsletter Archive</Headline>
 
             {
-                newsletters.map((newsletter) => (
-                    <a
-                        href={`${BASE_URL}/content/newsletters/newsletter-v${newsletter.volume}n${newsletter.number}.pdf`}
-                        class="my-4 flex flex-col gap-2 rounded-lg bg-orange-super-light p-4 no-underline"
-                    >
-                        <Heading size={3}>{newsletter.name}</Heading>
-                        <p class="flex gap-2">
-                            <span>
-                                Vol. {newsletter.volume}, No.{" "}
-                                {newsletter.number}
-                            </span>
-                            <span>—</span>
-                            <span>
-                                {newsletter.month} {newsletter.year}
-                            </span>
-                        </p>
-                    </a>
-                ))
+                newsletters.length ? (
+                    newsletters.map(
+                        (newsletter) =>
+                            typeof newsletter.newsletter_file !== "number" && (
+                                <a
+                                    href={newsletter.newsletter_file.url}
+                                    class="my-4 flex flex-col gap-2 rounded-lg bg-orange-super-light p-4 no-underline"
+                                >
+                                    <Heading size={3}>
+                                        {newsletter.name}
+                                    </Heading>
+                                    <p class="flex gap-2">
+                                        <span>
+                                            Vol. {newsletter.volume}, No.{" "}
+                                            {newsletter.issue}
+                                        </span>
+                                        <span>—</span>
+                                        <span>
+                                            {new Date(
+                                                newsletter.date!,
+                                            ).toLocaleDateString("default", {
+                                                month: "long",
+                                            })}
+                                            {new Date(
+                                                newsletter.date!,
+                                            ).getFullYear()}
+                                        </span>
+                                    </p>
+                                </a>
+                            ),
+                    )
+                ) : (
+                    <p>No newsletters provided.</p>
+                )
             }
         </div>
     </Group>
@@ -96,7 +75,7 @@ const newsletters = [
     </Group>
 
     <CallToAction
-        src={`${import.meta.env.BASE_URL}/images/GreatLakes-0.1q.jpg`}
+        src={`${BASE_URL}/images/GreatLakes-0.1q.jpg`}
         alt="Birdseye view of a shore on the Great Lakes. By Lucas Ludwig on Unsplash"
         noButton
     >
