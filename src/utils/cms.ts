@@ -101,7 +101,9 @@ export async function getPhotos(): Promise<Array<[string, CcDataMedia[]]>> {
             {},
         )
 
-        return Object.entries(photosByCategory).toSorted((a, b) =>
+        console.log(photosByCategory)
+
+        return Object.entries(photosByCategory).sort((a, b) =>
             a[0] < b[0] ? -1 : 1,
         )
     } catch (error) {
