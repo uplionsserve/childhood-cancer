@@ -19,6 +19,7 @@ async function fetchCMSJson(slug: string): Promise<any> {
         )
 
         const cmsJson = await cmsResponse.json()
+
         return cmsJson
     } catch (error) {
         console.log("Error fetching CMS data: ", error)
@@ -42,7 +43,7 @@ export async function getBanner(url: URL): Promise<CcDataMedia> {
     try {
         const pageBannersCollection = await fetchCMSJson("cc-data-page-banners")
         const pageBanner: CcDataPageBanner = pageBannersCollection.docs.find(
-            (doc: CcDataPageBanner) => doc.url! === url.pathname,
+            (doc: CcDataPageBanner) => url.pathname.includes(doc.url),
         )
 
         return pageBanner.banner as CcDataMedia
