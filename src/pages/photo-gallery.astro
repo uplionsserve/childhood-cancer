@@ -6,15 +6,20 @@ import Gallery from "@components/gallery.svelte"
 import Headline from "@/components/_fragments/Headline.svelte"
 
 const photos = await getPhotos()
+const photosWithCorrectedTitles = photos.map(([category, photos]) => {
+    return [category.replace(/-/g, " "), photos]
+})
 ---
 
 <!-- TODO: Description -->
 <ContentPageLayout title="Photo Gallery" description="">
     {
         photos.length ? (
-            photos.map(([category, photos]) => (
+            photosWithCorrectedTitles.map(([category, photos]) => (
                 <Group>
-                    <Headline direction="left">{category}</Headline>
+                    <Headline direction="left" capitalize>
+                        {category}
+                    </Headline>
                     <Gallery {photos} client:load />
                 </Group>
             ))
